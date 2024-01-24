@@ -1,0 +1,44 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+bool recc(vector<int> &arr,int &n,int i){
+  if(i==n-1){
+    return true;
+  }
+     if(arr[i+1]<arr[i]){
+      return false;
+     }
+     return recc(arr,n,i+1);
+}
+int binarysearch(vector<int> &arr,int &n,int s,int e,int key){
+   if(s>e){
+    return -1;
+   }
+   int mid=s+(e-s)/2;
+   if(arr[mid]==key){
+    return mid;
+   }
+   if(arr[mid]<key){
+    return binarysearch(arr,n,mid+1,e,key);
+   }
+   else{
+    return binarysearch(arr,n,s,mid-1,key);
+   }
+}
+int main() {
+   vector<int> arr{1,5,8,9,56,566};
+   int i=0;
+   int n=arr.size();
+   int key=6;
+   cout<<"Answer is :"<<binarysearch(arr,n,0,n-1,key);
+   /*bool issorted=recc(arr,n,i);
+   if(issorted){
+    cout<<"Array is Sorted"<<endl;
+   }
+   else{
+    cout<<"Not sorted"<<endl;
+   }
+   */
+
+
+}
