@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+void printsubsequence(string str,string ans,int i){
+  //base case
+  if(i>=str.size()){
+    cout<<ans<<endl;
+    return;
+  }
+  //exclude case
+   printsubsequence(str,ans,i+1);
+
+  //include case
+  ans.push_back(str[i]);
+  printsubsequence(str,ans,i+1);
+
+}
+int main() {
+  string str;
+  cin>>str;
+  string ans="";
+  int i=0;
+  printsubsequence(str,ans,i);
+  return 0;
+}
