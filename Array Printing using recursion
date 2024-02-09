@@ -1,0 +1,16 @@
+#include <iostream>
+using namespace std;
+void arrayprinting(int *arr,int n){
+    if(n==0){
+        return;
+    }
+    cout<<arr[0]<<" ";
+    arrayprinting(arr+1,n-1);
+}
+int main()
+{
+    int arr[8]={5,6,12,45,89,100,23,689};
+    int i=0;
+    arrayprinting(arr,8);
+    return 0;
+}
