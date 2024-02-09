@@ -1,0 +1,36 @@
+#include <iostream>
+#include <limits.h>
+using namespace std;
+void findmax(int arr[],int n,int i,int& maxi){
+    //base case
+    if(i>=n){
+        return;
+    }
+    if(arr[i]>maxi){
+         maxi=arr[i];
+    }
+    findmax(arr,n,i+1,maxi);
+}
+void findmin(int arr[],int n,int i,int& mini){
+    //base case
+    if(i>=n){
+        return;
+    }
+    if(arr[i]<mini){
+         mini=arr[i];
+    }
+    findmin(arr,n,i+1,mini);
+}
+int main()
+{
+    int arr[8]={51,16,112,45,5,89,2633,689};
+    int maxi=INT_MIN;//maximum number
+    int mini=INT_MAX; //minimum number
+    int n=8;
+    int i=0;
+    findmax(arr,n,i,maxi);
+    cout<<" Maximum No in array is : "<<maxi<<endl;
+    findmin(arr,n,i,mini);
+    cout<<" Minimum No in array is : "<<mini;
+    
+}
