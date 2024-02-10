@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+bool check(string ch,int n,int i,int key){
+    //base case
+    if(i>=n){
+        return false;
+    }
+    if(ch[i]==key){
+        cout<<"Found at index : "<<i<<endl;
+    }
+   return check(ch,n,i+1,key);
+}
+int main(){
+    string ch;
+    cout<<"Enter the string?"<<endl;
+    cin>>ch;
+    int n=ch.length();
+    int i=0;
+    char key;
+    cout<<"Enter the key?"<<endl;
+    cin>>key;
+    check(ch,n,i,key);
+   
+    
+}
