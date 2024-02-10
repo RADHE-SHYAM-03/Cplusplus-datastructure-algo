@@ -1,5 +1,4 @@
 #include <iostream>
-#include <vector>
 using namespace std;
 bool check(string ch,int n,int i,int key,int& count){
     //base case
@@ -17,14 +16,10 @@ int main(){
     cin>>ch;
     int n=ch.length();
     int i=0;
-    vector<int>ans;
     char key;
     cout<<"Enter the key?"<<endl;
     cin>>key;
     int count=0;
     check(ch,n,i,key,count);
     cout<<"Answer  is : "<<count;
-    
-   
-    
 }
