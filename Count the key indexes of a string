@@ -1,0 +1,30 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+bool check(string ch,int n,int i,int key,int& count){
+    //base case
+    if(i>=n){
+        return false;
+    }
+    if(ch[i]==key){
+       count++;
+    }
+   return check(ch,n,i+1,key,count);
+}
+int main(){
+    string ch;
+    cout<<"Enter the string?"<<endl;
+    cin>>ch;
+    int n=ch.length();
+    int i=0;
+    vector<int>ans;
+    char key;
+    cout<<"Enter the key?"<<endl;
+    cin>>key;
+    int count=0;
+    check(ch,n,i,key,count);
+    cout<<"Answer  is : "<<count;
+    
+   
+    
+}
