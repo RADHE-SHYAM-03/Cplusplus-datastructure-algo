@@ -1,0 +1,21 @@
+#include <iostream>
+using namespace std;
+void print(int n){
+    //bse case
+    if(n==0)
+    {
+        return;
+    }
+    int digit=n%10;
+    cout<<digit<<" ";
+    int newNO=n/10;
+    print(newNO);
+    
+}
+int main(){
+  int n;
+  cout<<"Enter Number ?"<<endl;
+  cin>>n;
+  cout<<endl<<"After Reversal answer is : ";
+  print(n);
+}
