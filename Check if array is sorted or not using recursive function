@@ -1,44 +1,35 @@
 #include <iostream>
 #include <vector>
 using namespace std;
-bool recc(vector<int> &arr,int &n,int i){
-  if(i==n-1){
-    return true;
-  }
-     if(arr[i+1]<arr[i]){
-      return false;
-     }
-     return recc(arr,n,i+1);
+bool sortedornot(vector<int>& v,int& n,int i){
+    //base case
+    if(i==n-1){
+        return true;
+    }
+    if(v[i+1]<v[i]){
+        return false;
+    }
+    return sortedornot(v,n,i+1);
 }
-int binarysearch(vector<int> &arr,int &n,int s,int e,int key){
-   if(s>e){
-    return -1;
-   }
-   int mid=s+(e-s)/2;
-   if(arr[mid]==key){
-    return mid;
-   }
-   if(arr[mid]<key){
-    return binarysearch(arr,n,mid+1,e,key);
-   }
-   else{
-    return binarysearch(arr,n,s,mid-1,key);
-   }
-}
-int main() {
-   vector<int> arr{1,5,8,9,56,566};
-   int i=0;
-   int n=arr.size();
-   int key=6;
-   cout<<"Answer is :"<<binarysearch(arr,n,0,n-1,key);
-   /*bool issorted=recc(arr,n,i);
-   if(issorted){
-    cout<<"Array is Sorted"<<endl;
-   }
-   else{
-    cout<<"Not sorted"<<endl;
-   }
-   */
-
-
+int main()
+{
+    vector<int> v;
+    int a,m;
+    cout<<"Enter the Number of values you want to enter ?"<<endl;
+    cin>>m;
+    cout<<"Now Enter the values ?"<<endl;
+    for(int i=0;i<m;i++)
+    {
+        cin>>a;
+        v.push_back(a);
+    }
+    int i=0;
+    int n=v.size();
+    bool ans=sortedornot(v,n,i);
+    if(ans){
+        cout<<"Array is Sorted"<<endl;
+    }
+    else{
+        cout<<"Array is Not Sorted"<<endl;
+    }
 }
