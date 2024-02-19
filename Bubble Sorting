@@ -1,0 +1,38 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+void bubblesort(vector<int> &arr,int n){
+    for(int i=0;i<n;i++){
+        for(int j=i+1;j<n;j++){
+            if(arr[j]<arr[i]){
+                swap(arr[j],arr[i]);
+            }
+        }
+    }
+}
+int main()
+{
+    vector<int> arr;
+    int n;
+    cout<<"No of elements to be enter ?"<<endl;
+    cin>>n;
+    int a;
+    for(int i=0;i<n;i++){
+        cout<<"Enter the "<< i <<" Element ?"<<endl;
+        cin>>a;
+        arr.push_back(a);
+    }
+
+    cout<<"Before Sorting : ";
+     for(auto val:arr){
+        cout<<val<<" ";
+    }
+    cout<<endl;
+    bubblesort(arr,n);
+    cout<<"After Sorting : ";
+    for(auto val:arr){
+        cout<<val<<" ";
+    }
+    
+    return 0;
+}
